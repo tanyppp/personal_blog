@@ -8,7 +8,7 @@ const fs = require('fs');
 // const fs = require('fs');
 const loader = require('./loader');
 
-const whiteList = ['http://localhost:3000', 'http://localhost:8000'];
+const whiteList = ['http://localhost:3000', 'http://localhost:8000', 'http://192.168.1.106:8000'];
 
 const app = express();
 
@@ -68,7 +68,7 @@ app.get('/queryAllNote', loader.get('/queryAllNote'));
 // 搜索
 app.get('/queryBlogByTitle', loader.get('/queryBlogByTitle'));
 //  为vue-router提供的接口，只需返回html
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
   const HTML = fs.readFileSync('../dist/index.html');
   res.end(HTML);
 });

@@ -57,7 +57,7 @@ module.exports = {
           options: {
             limit: 10000,
             name: 'image/[name].[hash:8].[ext]',
-            publicPath: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://localhost:8000'
+            publicPath: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : '/'
           }
         }
       },
@@ -68,7 +68,7 @@ module.exports = {
           options: {
             limit: 10000,
             name: 'media/[name].[hash:8].[ext]',
-            publicPath: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://localhost:8000'
+            publicPath: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : '/'
           }
         }
       },
@@ -79,7 +79,7 @@ module.exports = {
           options: {
             limit: 10000,
             name: 'fonts/[name].[hash:8].[ext]',
-            publicPath: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://localhost:8000'
+            publicPath: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : '/'
           }
         }
       },

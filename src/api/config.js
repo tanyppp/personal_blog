@@ -1,4 +1,4 @@
-export const baseURL = 'http://localhost:8000';
+export const baseURL = mode === 'development' ? 'http://localhost:8000' : '';
 export const URLS = {
   insertEveryDay: {
     url: '/insertEveryDay',
