@@ -67,6 +67,11 @@ app.post('/insertNote', loader.get('/insertNote'));
 app.get('/queryAllNote', loader.get('/queryAllNote'));
 // 搜索
 app.get('/queryBlogByTitle', loader.get('/queryBlogByTitle'));
+//  为vue-router提供的接口，只需返回html
+app.get('*', function(req, res) {
+  const HTML = fs.readFileSync('../dist/index.html');
+  res.end(HTML);
+});
 
 app.listen(8000, function () {
   console.log('服务已在端口号8000启动');

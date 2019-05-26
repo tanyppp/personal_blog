@@ -138,8 +138,16 @@ export default {
 @import "./styles/util.scss";
 @import "./styles/var.scss";
 
+html, body {
+  height: 100%;
+}
+
 body {
   min-width: 1042px;
+}
+
+.main {
+  min-height: 100%;
 }
 
 .nav {
