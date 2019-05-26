@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 function createConnection() {
   return mysql.createConnection({
-    ip: '127.0.0.1',
+    ip: '192.168.1.103',
     port: '3306',
     user: 'root',
     password: 'monkey123',
