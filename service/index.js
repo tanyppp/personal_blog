@@ -5,7 +5,7 @@ const fs = require('fs');
 // const webpackDevMiddleware = require('webpack-dev-middleware');
 // const compiler = webpack(require('../build/webpack.server'));
 
-// const fs = require('fs');
+const config = require('./config');
 const loader = require('./loader');
 
 const whiteList = ['http://localhost:3000', 'http://localhost:8000', 'http://192.168.1.106:8000'];
@@ -35,7 +35,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static('../dist'));
+app.use(express.static(config.page_path));
 
 // 每日一句更新
 app.post('/insertEveryDay', loader.get('/insertEveryDay'));
@@ -73,6 +73,6 @@ app.get('*', function (req, res) {
   res.end(HTML);
 });
 
-app.listen(8000, function () {
-  console.log('服务已在端口号8000启动');
+app.listen(config.port, function () {
+  console.log(`服务已在端口号${config.port}启动`);
 });
